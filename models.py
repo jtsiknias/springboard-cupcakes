@@ -30,8 +30,8 @@ class Cupcake(db.Model):
     def __repr__(self):
         return f"<Cupcake id={self.id}, flavor={self.flavor}, size={self.size}, rating={self.rating}, image={self.image}>"
 
-    # returns a dictionary representation of a single cupcake
     def serialize(self):
+        """Serialize a cupcake SQLAlchemy object to a dictionary"""
         return {
             "id": self.id,
             "flavor": self.flavor,
