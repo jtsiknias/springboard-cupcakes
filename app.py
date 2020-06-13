@@ -15,8 +15,9 @@ connect_db(app)
 
 
 @app.route("/")
-def homepage():
-    return render_template("index.html")
+def index_page():
+    cupcakes = Cupcake.query.all()
+    return render_template("index.html", cupcakes=cupcakes)
 
 
 @app.route("/api/cupcakes")
